@@ -1,0 +1,35 @@
+#+TITLE: 22120 with Puppeteer
+
+* About
+
+  + Fork of 22120 project that integrates Puppeteer automation
+  + See [[https://github.com/i5ik/22120/blob/master/README.md][original 22120 README]] file at ~22120_README.md~
+  + 22120 saves replayable "verbatim high-fidelity copy" of your browsing sesion to disk
+
+* Usage
+
+  + 22120 has two modes: ~save~ and ~serve~
+  + Both modes start a local server and an isolated Chrome browser instance with debug port opened
+  + The isolated Chrome instance will initialize ~22120-chrome-dir~ folder
+  + An ~archive_path~ folder will be created to save data
+    + Web requests are saved in ~archive_path/public/library/~ as base64 encoded blobs within JSON files
+  + Original 22120 code is left in place
+    + Parallel entry point starts with ~start_with_puppeteer~ npm script defined in package.json
+
+
+  + Command line parameter format
+    : <server_port> <save|serve> <chrome_port> <archive_path>
+
+  + Original ~save~ and ~serve~ mode example
+    : npm start 22120 save 9222 ARCHIVE_PATH/
+    : npm start 22120 serve 9222 ARCHIVE_PATH/
+
+  + Run save mode with puppeteer script
+    : npm run start_with_puppeteer 22120 save 9222 ARCHIVE_PATH/
+
+  + Serve mode to browse saved data at ~localhost:22120/archive_index.html~
+    : npm run start_with_puppeteer 22120 serve 9222 ARCHIVE_PATH/
+
+  + Set debug environment variable for more output
+    : export DEBUG_22120=True
+

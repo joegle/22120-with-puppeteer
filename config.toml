@@ -1,0 +1,15 @@
+# Configuration involving puppeteer additions
+
+delay = 10
+
+[test]
+
+urls = [
+  "https://google.com",
+  "https://www.wikipedia.org/",
+  "https://en.wikipedia.org/wiki/Main_Page",
+  "https://en.wikipedia.org/wiki/Special:Random",
+  "https://en.wikipedia.org/wiki/Special:Random",
+  "https://en.wikipedia.org/wiki/Special:Random",
+]
+
